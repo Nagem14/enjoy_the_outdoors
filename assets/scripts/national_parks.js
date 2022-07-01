@@ -30,14 +30,16 @@ appParksSwitch.addEventListener("change", function (event) {
 
 searchLocations.addEventListener("change", function (event) {
     if (event.target.checked) {
-        resultsCards.classList.add("d-none")
+        // resultsCards.classList.add("d-none")
+        appParksSwitch.checked = false;
         returnLocationsDDL()
     }
 })
 
 searchParkTypes.addEventListener("change", function (event) {
     if (event.target.checked) {
-        resultsCards.classList.add("d-none")
+        // resultsCards.classList.add("d-none")
+        appParksSwitch.checked = false;
         returnParkTypesDDL()
     }
 })
@@ -106,5 +108,4 @@ function returnCard(park) {
             </div>
         </div>
     `
-
 }

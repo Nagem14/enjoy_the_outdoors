@@ -43,6 +43,12 @@
 } */
 
 
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 20px;
+}
 
 .flip-card {
     background-color: transparent;
