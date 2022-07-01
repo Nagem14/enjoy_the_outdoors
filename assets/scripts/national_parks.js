@@ -2,8 +2,9 @@
 let searchLocations = document.getElementById("radioLocation");
 let searchParkTypes = document.getElementById("radioParkType");
 let npDDLs = document.getElementById("np-select");
-let resultsCards = document.getElementById("results")
+let resultsCards = document.getElementById("np-results")
 let appParksSwitch = document.getElementById("all-parks-switch")
+let appParksSwitchLabel = document.getElementById("all-parks-switch-label")
 
 function showAll() {
     resultsCards.innerHTML = ''
@@ -15,31 +16,38 @@ function showAll() {
 
 appParksSwitch.addEventListener("change", function (event) {
     if (event.target.checked) {
-        searchLocations.disabled = true;
         searchLocations.checked = false;
-        searchParkTypes.disabled = true;
         searchParkTypes.checked = false;
-        // npDDLs.classList.remove("d-none")
+        npDDLs.classList.add("d-none")
+        resultsCards.classList.remove("d-none")
         showAll()
     } else {
-        searchLocations.disabled = false;
-        searchParkTypes.disabled = false;
         resultsCards.classList.add("d-none")
+    }
+})
+
+appParksSwitchLabel.addEventListener("click", function (event) {
+    if (appParksSwitch.checked) {
+        appParksSwitch.checked = false
+        appParksSwitch.dispatchEvent(new Event("change"))
+    } else {
+        appParksSwitch.checked = true
+        appParksSwitch.dispatchEvent(new Event("change"))
     }
 })
 
 searchLocations.addEventListener("change", function (event) {
     if (event.target.checked) {
-        // resultsCards.classList.add("d-none")
         appParksSwitch.checked = false;
+        resultsCards.innerHTML = ''
         returnLocationsDDL()
     }
 })
 
 searchParkTypes.addEventListener("change", function (event) {
     if (event.target.checked) {
-        // resultsCards.classList.add("d-none")
         appParksSwitch.checked = false;
+        resultsCards.innerHTML = ''
         returnParkTypesDDL()
     }
 })

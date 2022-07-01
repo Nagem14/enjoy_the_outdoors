@@ -1,17 +1,20 @@
-let mountainContainer = document.getElementById("mountain-container")
+let mountainContent = document.getElementById("mountain-content")
 let mountainDDL = document.getElementById("mountain-select")
 let sunCycleContainer = document.getElementById("sun-cycle")
 
 mountainDDL.addEventListener("change", function (event) {
-    let selectedMtn = event.target.value
     mountainsArray.forEach(mountain => {
-        if (mountain.name === selectedMtn) {
-            mountainContainer.innerHTML = `
+        if (mountain.name === event.target.value) {
+            mountainContent.innerHTML = `
                 <h3>${mountain.name}</h3>
+                <div id="mtn-desc">
                 <img src="assets\\images\\mountains\\${mountain.img}">
                 </img>
+                <div id="mtn-info">
                 <p>${mountain.desc}</p>
                 <p>Elevation: ${mountain.elevation}ft</p>
+                </div>
+                </div>
         `
             getSunsetForMountain(mountain.coords.lat, mountain.coords.long).then(sunsetData => {
                 sunCycleContainer.innerHTML = `<p>Sunrise: ${sunsetData.results.sunrise} UTC<p>
