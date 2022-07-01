@@ -11,39 +11,64 @@
     justify-content: center;
     flex-direction: column;
 }
-/* 
-#carousel {
-    transition: transform 2s ease, opacity .5s ease-out;
+h1 {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 60px;
+  text-align: center;
+}
+#banner > h1 {
+  font-size: 80px;
+  color: white;
 }
 
-
-.col {
-    background-color: pink;
-    border-color: black;
-    border-style: double;
-    align-self: center;
+h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
 }
 
-.carousel-inner {
-    background-color: green;
-    border-color: black;
-    border-style: double;
-    align-self: center;
-}
-.carousel-item {
-    height: 350px !important;
-    width: 350px !important;
-    display: flex;
-}
-.carousel-item > img {
-    height: fit-content;
-    width: 100%;
-    align-items: center;
+#mountain-container {
+align-self: center;
+display: flex;
     justify-content: center;
-} */
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
 
+#mountain-content {
+  padding-top: 10px;
+  align-self: center;
+  width: 90%;
+  display: flex;
+      justify-content: center;
+      align-self: center;
+      flex-wrap: nowrap;
+      flex-direction: column;
+  }
 
-#results {
+  #mtn-desc {
+   display: flex;
+  }
+  
+  #mtn-desc > img {
+    max-width: 300px ;
+    height: auto;
+    align-content: center;
+  }
+  
+  #mtn-info {
+    padding: 20px;
+   }
+   
+.carousel {
+   transition: transform 2s ease, opacity .5s ease-out;
+  height: 300px;
+  width: 300px;
+  border: lightgrey;
+  border-style: dotted;
+}
+
+#np-results {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -88,5 +113,27 @@
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  
+  .form-check {
+    margin: 0 10px;
+  }
+
+  .form-select {
+    margin: 10px;
+    width: 75%;
+    justify-content: center;
+  }
+
+  .filter-controls {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
   }
   
